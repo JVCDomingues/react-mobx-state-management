@@ -13,6 +13,8 @@ import {
 
 import { Link } from 'react-router-dom';
 
+import logo from '../../assets/img/github-logo.png';
+
 const useStyles = makeStyles(() => ({
   paper: {
     padding: 10,
@@ -24,6 +26,16 @@ const useStyles = makeStyles(() => ({
   },
   button: {
     marginTop: 15
+  },
+  logo: {
+    maxWidth: 150,
+    marginBottom: 8
+  },
+  innerContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 }));
 
@@ -34,6 +46,7 @@ function Login() {
 
   const handleClick = () => {
     userContext.setValues(input);
+    localStorage.setItem('username', input);
   }
 
   return (
@@ -47,7 +60,10 @@ function Login() {
     >
       <Grid item xs={12}>
         <Paper elevation={3} className={classes.paper}>
-          <Typography variant="h5" className={classes.title}>Bem-vindo!</Typography>
+          <Grid className={classes.innerContainer}>
+            <img src={logo} alt="GitHub Logo" className={classes.logo}/>
+            <Typography variant="h5" className={classes.title}>Bem-vindo!</Typography>
+          </Grid>
           <TextField 
             variant="outlined"
             label="Usuário do GitHub"

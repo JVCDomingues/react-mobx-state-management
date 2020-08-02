@@ -7,11 +7,8 @@ import {
   Typography,
   Button,
   makeStyles,
-  IconButton,
   Avatar
 } from '@material-ui/core';
-
-import MenuIcon from '@material-ui/icons/Menu';
 
 import { Link } from 'react-router-dom';
 
@@ -29,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: 14
   },
 }))
-
+ 
 function Header() {
   const userContext = useContext(UserStoreContext);
   const { name, avatar_url } = userContext;
@@ -40,14 +37,11 @@ function Header() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
           <Avatar alt="User image" src={avatar_url}/>
           <Typography variant="h6" className={classes.title}>
             {name}
           </Typography>
-          <Button component={Link} to="/" color="inherit">Logout</Button>
+          <Button component={Link} to="/" color="inherit" onClick={() => localStorage.removeItem('username')}>Logout</Button>
         </Toolbar>
       </AppBar>
     </div>
