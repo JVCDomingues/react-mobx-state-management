@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import './styles.css';
 
-import Routes from './config/Routes';
+import Routes from './config/Routes/Routes';
 
 function App() {
+  useEffect(() => localStorage.removeItem('username'), []);
+
   return (
-    <div className="App">
+    <div className="App"> 
       <Routes />
     </div>
   );

@@ -17,7 +17,7 @@ import { UserStoreContext } from '../../stores/User/UserStore';
 
 const useStyles = makeStyles(() => ({
   root: {
-    maxWidth: 500
+    width: '100%',
   }
 }));
 
@@ -36,7 +36,6 @@ function Card() {
       direction="column"
       alignItems="center"
       justify="center"
-      style={{ minHeight: '50vh' }}
     >
       <MaterialCard className={classes.root}>
         <CardHeader

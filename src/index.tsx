@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import { ThemeProvider } from "@material-ui/styles";
-import { theme } from './config/CustomTheme';
+import { theme } from './config/Theme/CustomTheme';
 
 ReactDOM.render(
   <React.StrictMode>
